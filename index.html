@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Banking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <aside>
+      <h2>Banking System</h2>
+      <nav>
+        <button onclick="showSection('create')">Create Account</button>
+        <button onclick="showSection('delete')">Delete Account</button>
+        <button onclick="showSection('update')">Update Account</button>
+        <button onclick="showSection('getall')">Get All Accounts</button>
+        <button onclick="showSection('getsingle')">Get Single Account</button>
+        <button onclick="showSection('deposit')">Deposit Amount</button>
+        <button onclick="showSection('withdraw')">Withdraw Amount</button>
+        <button onclick="showSection('transfer')">Transfer Funds</button>
+      </nav>
+    </aside>
+    <main>
+      <h1>State Bank of India</h1>
+      <section id="create" class="section">
+        <h2>Create New Account</h2>
+        <form onsubmit="createAccount(event)">
+          <input required id="accNo" placeholder="Account No">
+          <input required id="accName" placeholder="Name">
+          <input required id="accPhone" placeholder="Phone">
+          <input required id="accEmail" placeholder="Email">
+          <input required id="accBalance" placeholder="Initial Balance" type="number">
+          <button type="submit">Create</button>
+        </form>
+        <div id="createMsg"></div>
+      </section>
+      <section id="delete" class="section">
+        <h2>Delete Account</h2>
+        <form onsubmit="deleteAccount(event)">
+          <input required id="delAccNo" placeholder="Account No">
+          <button type="submit">Delete</button>
+        </form>
+        <div id="deleteMsg"></div>
+      </section>
+      <section id="update" class="section">
+        <h2>Update Account</h2>
+        <form onsubmit="updateAccount(event)">
+          <input required id="updAccNo" placeholder="Account No">
+          <input id="updAccName" placeholder="Name">
+          <input id="updAccPhone" placeholder="Phone">
+          <input id="updAccEmail" placeholder="Email">
+          <button type="submit">Update</button>
+        </form>
+        <div id="updateMsg"></div>
+      </section>
+      <section id="getall" class="section">
+        <h2>All Accounts</h2>
+        <button onclick="showAllAccounts()">Refresh List</button>
+        <div id="allAccounts"></div>
+      </section>
+      <section id="getsingle" class="section">
+        <h2>Get Single Account</h2>
+        <form onsubmit="getSingleAccount(event)">
+          <input required id="getAccNo" placeholder="Account No">
+          <button type="submit">Get</button>
+        </form>
+        <div id="singleAccount"></div>
+      </section>
+      <section id="deposit" class="section">
+        <h2>Deposit Amount</h2>
+        <form onsubmit="depositAmount(event)">
+          <input required id="depAccNo" placeholder="Account No">
+          <input required id="depAmount" placeholder="Amount" type="number">
+          <button type="submit">Deposit</button>
+        </form>
+        <div id="depositMsg"></div>
+      </section>
+      <section id="withdraw" class="section">
+        <h2>Withdraw Amount</h2>
+        <form onsubmit="withdrawAmount(event)">
+          <input required id="witAccNo" placeholder="Account No">
+          <input required id="witAmount" placeholder="Amount" type="number">
+          <button type="submit">Withdraw</button>
+        </form>
+        <div id="withdrawMsg"></div>
+      </section>
+      <section id="transfer" class="section">
+        <h2>Transfer Funds</h2>
+        <form onsubmit="transferFunds(event)">
+          <input required id="fromAccNo" placeholder="From Account">
+          <input required id="toAccNo" placeholder="To Account">
+          <input required id="trAmount" placeholder="Amount" type="number">
+          <button type="submit">Transfer</button>
+        </form>
+        <div id="transferMsg"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
